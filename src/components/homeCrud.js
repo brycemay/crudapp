@@ -4,7 +4,7 @@ export default class MernCrud extends Component {
 render () {
     return (
         <div>
-            <p>Welcome to CRUDMERN Component</p>
+            <h2>Projects</h2>
         </div>
     )
 }

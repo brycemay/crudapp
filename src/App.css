@@ -1,3 +1,34 @@
 .container {
-  border-color: darkgreen;
+  font-family: 'Poppins', sans-serif;
+  color: rgb(0, 0, 0);
+  margin-bottom: none;
+  
+}
+.forms {
+  width: 500px;
+  margin-left: 300px
+
+}
+.mainbck {
+  background-color: rgb(105, 222, 252);
+}
+
+.navbar-brand {
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 25px;
+}
+.createForm {
+  color: rgb(0, 0, 0);
+  background-color: rgb(243, 243, 243);
+  width: 100%;
+  border: 20px solid rgb(243, 243, 243);
+  border-radius: 35px;
+  box-shadow: 0px 0px 10px;
+}
+
+.hdr3 {
+  color: rgba(0, 0, 0, 0.781);
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
 }
