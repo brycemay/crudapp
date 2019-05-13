@@ -5,6 +5,7 @@ import Tilt from "react-tilt";
 import MernCrud from "./components/homeCrud.js";
 import CreateCrud from "./components/createCrud";
 import EditCrud from "./components/editCrud";
+import EditUpdate from './components/editupdate'
 import logo from "./logo.jpg";
 import "./App.css";
 
@@ -34,11 +35,6 @@ class App extends Component {
             <div className="collapse navbar-collapse">
               <ul className="navbar-nav mr-auto">
                 <li className="navbar-item">
-                  <Link to="/" className="nav-link">
-                    Home
-                  </Link>
-                </li>
-                <li className="navbar-item">
                   <Link to="/create" className="nav-link">
                     CreateProject
                   </Link>
@@ -53,8 +49,11 @@ class App extends Component {
           </nav>
 
           <Route path="/" exact component={MernCrud} />
+          <Route path="/editupdate/:id" component={EditUpdate} />
           <Route path="/edit" component={EditCrud} />
           <Route path="/create" component={CreateCrud} />
+          
+
         </div>
       </Router>
     );

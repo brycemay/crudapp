@@ -1,79 +1,38 @@
 import React, { Component } from "react";
 
 
-export default class CreateCrud extends Component {
-  constructor(props) {
-    super(props);
-
-    this.onChangeDescription = this.onChangeDescription = this.onChangeDescription.bind(
-      this
-    );
-    this.onChangeResponsible = this.onChangeResponsible = this.onChangeResponsible.bind(
-      this
-    );
-    this.onChangePriority = this.onChangePriority = this.onChangePriority.bind(
-      this
-    );
-    this.onSubmit = this.onSubmit.bind(this);
-
-    this.state = {
-      description: "",
-      what_for: "",
-      priority: "",
-      completed: false
-    };
-  }
-
-  onChangeDescription(e) {
-    this.setState({
-      description: e.target.value
-    });
-  }
-
-  onChangeResponsible(e) {
-    this.setState({
-      what_for: e.target.value
-    });
-  }
-
-  onChangePriority(e) {
-    this.setState({
-      priority: e.target.value
-    });
-  }
+export default class EditUpdate extends Component {
+  state = {
+    description: this.props.location.user.description,
+    what_for: this.props.location.user.what_for,
+    priority: this.props.location.user.priority
+  };
 
   onSubmit = async e => {
     e.preventDefault();
     const data = JSON.stringify(this.state);
-    await fetch("http://localhost:4000", {
-      method: "POST",
+    console.log(data);
+    await fetch(`http://localhost:4000/${this.props.match.params.id}`, {
+      method: "PUT",
       body: data,
       headers: {
         "Content-Type": "application/json"
       }
-      
     });
-    console.log(`Form submitted`);
-    console.log(`description ${this.state.description}`);
-    console.log(`responsible ${this.state.what_for}`);
-    console.log(`priority ${this.state.priority}`);
-    console.log(`completed ${this.state.completed}`);
 
-    this.setState({
-      description: "",
-      what_for: "",
-      priority: "",
-      completed: false
-    });
-    this.props.history.push('/edit');
-    //this is where you would put a redirect to a new page
+    this.props.history.push("/edit");
   };
-  
+
+  componentDidMount() {
+    fetch("http://localhost:4000")
+      .then(results => results.json())
+      .then(data => this.setState({ projects: data }));
+  }
+
   render() {
-    console.log(this.state);
+    console.log(this.props.match.params.id);
     return (
-      <div style={{ marginTop: 70 }} className="forms">
-        <h3 className="hdr3">Create New Project</h3>
+      <div className="updateform">
         <form onSubmit={this.onSubmit} className="createForm">
           <div className="form-group">
             <label>Description:</label>
@@ -81,17 +40,16 @@ export default class CreateCrud extends Component {
               type="text"
               className="form-control"
               value={this.state.description}
-              onChange={this.onChangeDescription}
+              onChange={e => this.setState({ description: e.target.value })}
             />
           </div>
           <div className="form-group">
             <label>What For:</label>
             <input
-              
               type="text"
               className="form-control"
               value={this.state.what_for}
-              onChange={this.onChangeResponsible}
+              onChange={e => this.setState({ what_for: e.target.value })}
             />
           </div>
           <label>Priority:</label>
@@ -104,7 +62,7 @@ export default class CreateCrud extends Component {
                 id="priorityLow"
                 value="Low"
                 checked={this.state.priority === "Low"}
-                onChange={this.onChangePriority}
+                onChange={e => this.setState({ priority: e.target.value })}
               />
               <label className="form-check-label">Low</label>
             </div>
@@ -116,7 +74,7 @@ export default class CreateCrud extends Component {
                 id="priorityMedium"
                 value="Medium"
                 checked={this.state.priority === "Medium"}
-                onChange={this.onChangePriority}
+                onChange={e => this.setState({ priority: e.target.value })}
               />
               <label className="form-check-label">Medium</label>
             </div>
@@ -128,13 +86,13 @@ export default class CreateCrud extends Component {
                 id="priorityHigh"
                 value="High"
                 checked={this.state.priority === "High"}
-                onChange={this.onChangePriority}
+                onChange={e => this.setState({ priority: e.target.value })}
               />
               <label className="form-check-label">High</label>
             </div>
           </div>
           <div className="form-group">
-         <input type="submit" value="Create" className="btn btn-dark" />
+            <input type="submit" value="Update" className="btn btn-dark" />
           </div>
         </form>
       </div>

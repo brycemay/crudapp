@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class EditCrud extends Component {
   state = {
@@ -12,38 +13,38 @@ export default class EditCrud extends Component {
       .then(data => this.setState({ projects: data }));
   }
 
-  onDelete = async vladimir => {
-    await fetch(`http://localhost:4000/${vladimir}`, {
+  onDelete = async id => {
+    await fetch(`http://localhost:4000/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"
-    }
-  })
+      }
+    });
   window.location.reload()
-  //redirect or refresh the page
-};
+  };
+
   render() {
     return (
-      <div>
-        <h3>Edit Project </h3>
-        <table>
-          <thead>
-            {this.state.projects.map((user, i) => (
-              <ul key={i}>
-              {console.log(user)}
-                <td> Project: {user.crud_description}</td> <br />
-                <td> What For: {user.crud_responsible}</td>
-                <br />
-                <td> Priority: {user.crud_priority}</td> <br />
-                <td>
-                  <button>Edit</button>
-                  <button onClick={() => {this.onDelete(user._id)}}>Delete</button>
-                </td>
-              </ul>
-            ))}
-            {console.log(this.state)}
-          </thead>
-        </table>
+      <div className="editforms">
+        {this.state.projects.map((user, i) => (
+          <ul key={i}>
+            {console.log("blah", user)}
+            <li> Project:{user.description}</li> <br />
+            <li>What For:{user.what_for}</li>
+            <br />
+            <li>Priority: {user.priority}</li> <br />
+            <button
+              onClick={() => {
+                this.onDelete(user._id);
+              }}
+            >
+              Delete
+            </button>
+            <Link to={
+            {pathname:"/editupdate/" + user._id, user: user}}
+            > Edit</Link>
+          </ul>
+        ))}
       </div>
     );
   }
