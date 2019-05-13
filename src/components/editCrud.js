@@ -20,7 +20,7 @@ export default class EditCrud extends Component {
         "Content-Type": "application/json"
       }
     });
-  window.location.reload()
+    window.location.reload();
   };
 
   render() {
@@ -34,15 +34,17 @@ export default class EditCrud extends Component {
             <br />
             <li>Priority: {user.priority}</li> <br />
             <button
+            className='dltBtn'
               onClick={() => {
                 this.onDelete(user._id);
               }}
             >
               Delete
             </button>
-            <Link to={
-            {pathname:"/editupdate/" + user._id, user: user}}
-            > Edit</Link>
+            <Link to={{ pathname: "/editupdate/" + user._id, user: user }}>
+              {" "}
+              Edit
+            </Link>
           </ul>
         ))}
       </div>

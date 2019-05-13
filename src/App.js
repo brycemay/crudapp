@@ -19,7 +19,7 @@ class App extends Component {
               {
                 <Tilt
                   className="Tilt br2"
-                  options={{ max: 200 }}
+                  options={{ max: 75 }}
                   style={{ height: 100, width: 100 }}
                 >
                   <div className="Tilt-inner">
