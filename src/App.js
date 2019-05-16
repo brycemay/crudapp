@@ -5,8 +5,8 @@ import Tilt from "react-tilt";
 import MernCrud from "./components/homeCrud.js";
 import CreateCrud from "./components/createCrud";
 import EditCrud from "./components/editCrud";
-import EditUpdate from './components/editupdate'
-import logo from "./newlogo.jpg";
+import EditUpdate from "./components/editupdate";
+import logo from "./code.png";
 import "./App.css";
 
 class App extends Component {
@@ -19,19 +19,19 @@ class App extends Component {
               {
                 <Tilt
                   className="Tilt br2"
-                  options={{ max: 75 }}
-                  style={{ height: 200, width: 200 }}
+                  options={{ max: 100 }}
+                  style={{ height: 100, width: 100 }}
                 >
                   <div className="Tilt-inner">
                     {" "}
-                    <img src={logo} width="200" height="200" alt=""/>{" "}
+                    <img src={logo} width="100" height="100" alt="" />{" "}
                   </div>
                 </Tilt>
               }
             </a>
-            <Link to="/" className="navbar-brand">
-              My Website
-            </Link>
+            {/* <Link to="/" className="navbar-brand">
+              Home
+            </Link> */} 
             <div className="collapse navbar-collapse">
               <ul className="navbar-nav mr-auto">
                 <li className="navbar-item">
@@ -52,8 +52,13 @@ class App extends Component {
           <Route path="/editupdate/:id" component={EditUpdate} />
           <Route path="/edit" component={EditCrud} />
           <Route path="/create" component={CreateCrud} />
-          
 
+          <footer className="footer">
+            Built by Bryce May <br /> GitHub @{" "}
+            <a href="https://github.com/brycemay">BryceMay</a> <br />
+            LinkedIn @{" "}
+            <a href="https://www.linkedin.com/in/bryce-may/">Bryce May</a>
+          </footer>
         </div>
       </Router>
     );
