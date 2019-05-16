@@ -6,7 +6,7 @@ import MernCrud from "./components/homeCrud.js";
 import CreateCrud from "./components/createCrud";
 import EditCrud from "./components/editCrud";
 import EditUpdate from './components/editupdate'
-import logo from "./logo.jpg";
+import logo from "./newlogo.jpg";
 import "./App.css";
 
 class App extends Component {
@@ -20,11 +20,11 @@ class App extends Component {
                 <Tilt
                   className="Tilt br2"
                   options={{ max: 75 }}
-                  style={{ height: 100, width: 100 }}
+                  style={{ height: 200, width: 200 }}
                 >
                   <div className="Tilt-inner">
                     {" "}
-                    <img src={logo} width="100" height="100" alt=""/>{" "}
+                    <img src={logo} width="200" height="200" alt=""/>{" "}
                   </div>
                 </Tilt>
               }
@@ -36,12 +36,12 @@ class App extends Component {
               <ul className="navbar-nav mr-auto">
                 <li className="navbar-item">
                   <Link to="/create" className="nav-link">
-                    CreateProject
+                    CreateToDo
                   </Link>
                 </li>
                 <li className="navbar-item">
                   <Link to="/edit/:id" className="nav-link">
-                    MyProjects
+                    MyToDo's
                   </Link>
                 </li>
               </ul>

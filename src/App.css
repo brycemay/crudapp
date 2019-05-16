@@ -1,21 +1,20 @@
 .container {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: rgb(0, 0, 0);
   margin-bottom: none;
-  
 }
 .forms {
   width: 500px;
-  margin-left: 300px
-
+  margin-left: 300px;
+  font-size: 20px;
 }
 .mainbck {
   background-color: rgb(105, 222, 252);
 }
 
 .navbar-brand {
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-font-size: 25px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 25px;
 }
 .createForm {
   color: rgb(0, 0, 0);
@@ -24,12 +23,11 @@ font-size: 25px;
   border: 20px solid rgb(243, 243, 243);
   border-radius: 35px;
   box-shadow: 0px 0px 10px;
-  
 }
 
 .hdr3 {
   color: rgba(0, 0, 0, 0.781);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -41,11 +39,12 @@ font-size: 25px;
   border: 20px solid rgb(243, 243, 243);
   border-radius: 35px;
   box-shadow: 0px 0px 10px;
-  margin:auto
+  margin: auto;
+  
 }
 
 .updateform {
-  margin:auto;
+  margin: auto;
   width: 50%;
   margin-top: 1%;
 }
@@ -59,12 +58,17 @@ font-size: 25px;
 .homeWelcome {
   font-size: 25px;
   text-align: left;
-  border:5px dotted rgb(255, 251, 0);
-  border-radius: 20px;
+  border: 15px dotted rgb(255, 251, 0);
+  border-radius: 70px;
+  padding: 70px;
 }
 
 .dltBtn {
   background-color: rgb(87, 87, 87);
   color: rgb(255, 255, 255);
   border-radius: 7px;
+}
+
+.formtext {
+  font-size: 20px;
 }

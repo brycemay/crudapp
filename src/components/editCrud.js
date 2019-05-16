@@ -27,14 +27,14 @@ export default class EditCrud extends Component {
     return (
       <div className="editforms">
         {this.state.projects.map((user, i) => (
-          <ul key={i}>
+          <ul key={i} className="formtext">
             {console.log("blah", user)}
-            <li> Project:{user.description}</li> <br />
-            <li>What For:{user.what_for}</li>
+            <li> ToDo: {user.description}</li> <br />
+            <li>What For: {user.what_for}</li>
             <br />
             <li>Priority: {user.priority}</li> <br />
             <button
-            className='dltBtn'
+              className="dltBtn"
               onClick={() => {
                 this.onDelete(user._id);
               }}

@@ -73,10 +73,10 @@ export default class CreateCrud extends Component {
     console.log(this.state);
     return (
       <div style={{ marginTop: 70 }} className="forms">
-        <h3 className="hdr3">Create New Project To Do:</h3>
+        <h3 className="hdr3">Create New To Do:</h3>
         <form onSubmit={this.onSubmit} className="createForm">
           <div className="form-group">
-            <label>Description:</label>
+            <label>Description: </label>
             <input
               type="text"
               className="form-control"
@@ -85,7 +85,7 @@ export default class CreateCrud extends Component {
             />
           </div>
           <div className="form-group">
-            <label>What For:</label>
+            <label>What For: </label>
             <input
               
               type="text"
@@ -94,7 +94,7 @@ export default class CreateCrud extends Component {
               onChange={this.onChangeResponsible}
             />
           </div>
-          <label>Priority:</label>
+          <label>Priority: </label>
           <div className="form-group">
             <div className="from-check form-check-inline">
               <input
