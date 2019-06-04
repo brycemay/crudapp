@@ -23,12 +23,6 @@ export default class EditUpdate extends Component {
     this.props.history.push("/edit");
   };
 
-  componentDidMount() {
-    fetch("http://localhost:4000")
-      .then(results => results.json())
-      .then(data => this.setState({ projects: data }));
-  }
-
   render() {
     console.log(this.props.match.params.id);
     return (

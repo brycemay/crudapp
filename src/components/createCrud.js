@@ -14,7 +14,7 @@ export default class CreateCrud extends Component {
     this.onChangePriority = this.onChangePriority = this.onChangePriority.bind(
       this
     );
-    this.onSubmit = this.onSubmit.bind(this);
+
 
     this.state = {
       description: "",
@@ -66,7 +66,6 @@ export default class CreateCrud extends Component {
       completed: false
     });
     this.props.history.push('/edit');
-    //this is where you would put a redirect to a new page
   };
   
   render() {
